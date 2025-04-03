@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+>
+  <head>
+    <title>Bookstore - Login</title>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/css/bootstrap.min.css"
+      th:href="@{/css/bootstrap.min.css}"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="col-md-4 offset-md-4">
+        <h2 class="text-center">Login to Bookstore</h2>
+
+        <div class="alert alert-danger" th:if="${param.error}">
+          Invalid username or password.
+        </div>
+        <div class="alert alert-success" th:if="${param.logout}">
+          You have been logged out successfully.
+        </div>
+
+        <form th:action="@{/login}" method="post">
+          <div class="mb-3">
+            <label class="form-label">Username:</label>
+            <input type="text" name="username" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password:</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="d-grid">
+            <input type="submit" value="Login" class="btn btn-primary" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
