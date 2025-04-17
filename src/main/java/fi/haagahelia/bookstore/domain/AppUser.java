@@ -3,7 +3,7 @@ package fi.haagahelia.bookstore.domain;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users") // "users" avoids conflicts with reserved keywords
+@Table(name = "usertable") // "usertable" avoids conflicts with reserved keywords
 public class AppUser {
 
     @Id
